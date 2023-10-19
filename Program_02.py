@@ -164,3 +164,20 @@ Statistical Pattern Recognition | Session 02
 # print(nums[-2:])  # Will Output the Last two Items in List
 
 
+##########################################################################################
+# Home Work:
+import subprocess
+import winsound
+while True:
+    cmd_output = subprocess.check_output(['netsh', 'wlan', 'show', 'interface'], universal_newlines=True)
+    end_index = cmd_output.find("%")
+    start_index = end_index - 3
+    signal_power = int((cmd_output[start_index:end_index]).strip())
+    print(signal_power)
+    if signal_power < 90:
+        winsound.Beep(1000, 100)
+##########################################################################################
+# Contact Info:
+# Email: S.Esmaeili@umail.umz.ac.ir
+# Cellphone: +989122123203
+##########################################################################################
